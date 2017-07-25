@@ -7,7 +7,7 @@ UNALIGNED
 #.END
 
 #.PDU
-Frame
+MessageFrame
 #.END
 
 #.FIELD_RENAME

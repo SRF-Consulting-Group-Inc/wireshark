@@ -200,11 +200,11 @@ dissect_ieee1609dot3(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void* 
     psid = tvb_get_guint8(tvb, offset);
     psid_len = 1;
 
-    if ((psid & 0xF0) == 0xE0)
+    if ((psid & 0xF0) >= 0xE0)
         psid_len = 4;
-    else if ((psid & 0xF0) == 0xC0)
+    else if ((psid & 0xF0) >= 0xC0)
         psid_len = 3;
-    else if ((psid & 0xF0) == 0x80)
+    else if ((psid & 0xF0) >= 0x80)
         psid_len = 2;
 
     offset += psid_len;
